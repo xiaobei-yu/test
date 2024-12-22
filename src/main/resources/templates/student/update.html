@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改学生信息的页面</title>
+</head>
+<body>
+  <form th:action="@{update}" method="post">
+    <input type="text" name="uid" th:value="${student.uid}"/><br/>
+    姓名：<input type="text" name="name" th:value="${student.name }"/><br/>
+    性别：<input type="text" name="sex" th:value="${student.sex }"/><br/>
+    年龄：<input type="text" name="age" th:value="${student.age }"/><br/>
+    出生日期：<input type="text" name="birthday" th:value="${student.birthday }"/><br/>
+    邮箱：<input type="text" name="email" th:value="${student.email }"/><br/>
+        <input type="submit" value="修改">
+  </form>
+
+</body>
+</html>

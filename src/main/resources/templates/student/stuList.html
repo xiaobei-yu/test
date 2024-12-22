@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>查询所有学生信息</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>用户编号</th>
+        <th>用户名称</th>
+        <th>用户性别</th>
+        <th>用户年龄</th>
+        <th>出生日期</th>
+        <th>邮箱</th>
+    </tr>
+    <!--遍历controller传递的studentList-->
+    <tr th:each="student:${stuList}">
+        <td th:text="${student.uid}"></td>
+        <td th:text="${student.name}"></td>
+        <td>
+            <span th:if="${student.sex==0}">女</span>
+            <span th:if="${student.sex==1}">男</span>
+        </td>
+        <td th:text="${student.age}"></td>
+        <td th:text="${student.birthday}"></td>
+        <td th:text="${student.email}"></td>
+    </tr>
+</table>
+</body>
+</html>
